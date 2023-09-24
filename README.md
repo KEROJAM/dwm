@@ -8,7 +8,7 @@ x11, Xinerama, xcb, freetype, notofont-cjk
 
 ## Make dwm
 
-'make && sudo make clean install'
+`make && sudo make clean install`
 
 ### Patches
 
