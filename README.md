@@ -25,7 +25,7 @@ All of the patches that I applied are in the patch folder but here are the names
 ## Things I also recomend to install
 
 - [Dmenu](https://tools.suckless.org/dmenu/)
-- [slstatus]()
+- [slstatus](https://github.com/KEROJAM/slstatus)
 
 ## Keybind
 
