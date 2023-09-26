@@ -1441,6 +1441,7 @@ run(void)
 			handler[ev.type](&ev); /* call handler */
 }
 
+
 void
 scan(void)
 {
