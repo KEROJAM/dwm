@@ -20,7 +20,8 @@ All of the patches that I applied are in the patch folder but here are the names
 - vanitygaps
 - hide vacant tags
 - attachbelow
-
+- autostart
+- pertag
 
 ## Things I also recomend to install
 
