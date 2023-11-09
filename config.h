@@ -40,7 +40,7 @@ static const Rule rules[] = {
 	 */
 	/* class          instance          title    tags mask     isfloating   monitor */
 	{ "Gimp",           NULL,           NULL,         0,            1,           -1 },
-	{ "Toolkit",     "firefox", "Picture-in-Picture", 0,            1,           -1 },
+	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,           -1 },
 	{ "Anki",           NULL,       "Statistics",     0,            1,           -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,           -1 },
     { "Anki",           NULL,       "Edit Current",   0,            1,           -1 },
@@ -89,6 +89,7 @@ static const char *anki_screen[] = { "/home/kerojam/ames/ames.sh", "-s", NULL };
 static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
+static const char *anki[] = { "anki", NULL };
 #include "exitdwm.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -101,9 +102,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = weston } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot} },
+	{ MODKEY,                       XK_a,      spawn,          {.v = anki} },
 	{ MODKEY,                       XK_o,      togglebar,      {0} },
-	{ MODKEY,                       XK_l,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_m,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = -0.05} },
@@ -129,7 +131,7 @@ static const Key keys[] = {
 	{ MODKEY,	                    XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      fullscreen,     {0} },
+	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
