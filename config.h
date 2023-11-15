@@ -17,17 +17,10 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#ca7666";
-static const unsigned int baralpha = 0xd0;
-static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-};
-static const unsigned int alphas[][3]      = {
-    /*               fg      bg        border*/
-    [SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -47,7 +40,6 @@ static const Rule rules[] = {
 	{ "weston-1", "Weston Compositor",  NULL,         4,            0,           -1 },
 	{ "discord",        NULL,           NULL,         2,            0,           -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,           -1 },
-	{ "obs",            "obs",          NULL,         9,            0,           -1 },
 	{ "steamwebhelper", "steam",	    NULL,         8,            0,           -1 },
 };
 
@@ -128,7 +120,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,	                    XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
