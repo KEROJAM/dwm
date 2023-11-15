@@ -14,7 +14,6 @@ x11, Xinerama, xcb, freetype, notofont-cjk
 
 All of the patches that I applied are in the patch folder but here are the names of them 
 
-- alpha
 - actualfullscreen
 - vanitygaps
 - hide vacant tags
