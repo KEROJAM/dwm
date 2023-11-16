@@ -3,10 +3,10 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 10;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 5;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 5;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 5;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 5;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -36,7 +36,7 @@ static const Rule rules[] = {
 	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,           -1 },
 	{ "Anki",           NULL,       "Statistics",     0,            1,           -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,           -1 },
-    { "Anki",           NULL,       "Edit Current",   0,            1,           -1 },
+   	{ "Anki",           NULL,       "Edit Current",   0,            1,           -1 },
 	{ "weston-1", "Weston Compositor",  NULL,         4,            0,           -1 },
 	{ "discord",        NULL,           NULL,         2,            0,           -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,           -1 },
@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 	{ "[]=",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-    { "|+|",      tatami },
+	{ "|+|",      tatami },
 };
 
 /* key definitions */
@@ -77,13 +77,15 @@ static const char *roficmd[] = { "/home/kerojam/.config/rofi/launchers/type-2/la
 static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-4/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
 static const char *browser[] = { "firefox", NULL };
+static const char *browser2[] = { "librewolf", NULL };
+static const char *browser3[] = { "brave", NULL };
 static const char *file_browser[] = { "nemo", NULL };
-static const char *anki_record[] = { "/home/kerojam/ames/ames.sh", "-r", NULL };
-static const char *anki_screen[] = { "/home/kerojam/ames/ames.sh", "-s", NULL };
+static const char *anki_record[] = { "~/ames/ames.sh", "-r", NULL };
+static const char *anki_screen[] = { "~/ames/ames.sh", "-s", NULL };
+static const char *anki[] = { "anki", NULL };
 static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
-static const char *anki[] = { "anki", NULL };
 #include "exitdwm.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,12 +93,16 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_y,      spawn,          {.v = rofipmcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 		 	            XK_b,	   spawn,	       {.v = browser } },
+	{ MODKEY, 		 	            XK_b,	   spawn,	       {.v = browser2 } },
+	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	       {.v = browser } },
+	{ MODKEY,                       XK_s,	   spawn,	       {.v = browser3 } },
 	{ MODKEY,			            XK_e,	   spawn,    	   {.v = file_browser } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = weston } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot} },
 	{ MODKEY,                       XK_a,      spawn,          {.v = anki} },
+	{ ControlMask|ShiftMask,    	XK_F7,	   spawn,	       {.v = anki_record} },
+	{ ShiftMask,  		            XK_F7,	   spawn,	       {.v = anki_screen} },
 	{ MODKEY,                       XK_o,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_m,      focusstack,     {.i = -1 } },
@@ -125,6 +131,7 @@ static const Key keys[] = {
 	{ MODKEY,	                    XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
@@ -145,9 +152,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_e,      exitdwm,        {0} },
-	{ ControlMask|ShiftMask,		XK_F7,	   spawn,	       {.v = anki_record} },
-	{ ShiftMask,  		            XK_F7,	   spawn,	       {.v = anki_screen} },
-
 
 
 };

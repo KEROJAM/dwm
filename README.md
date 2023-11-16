@@ -20,6 +20,7 @@ All of the patches that I applied are in the patch folder but here are the names
 - attachbelow
 - autostart
 - pertag
+- tatami layout
 
 ## Things I also recomend to install
 
