@@ -40,7 +40,6 @@ static const Rule rules[] = {
 	{ "weston-1", "Weston Compositor",  NULL,         4,            0,           -1 },
 	{ "discord",        NULL,           NULL,         2,            0,           -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,           -1 },
-	{ "steamwebhelper", "steam",	    NULL,         8,            0,           -1 },
 };
 
 /* layout(s) */
@@ -53,10 +52,10 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "tatami.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
 	{ "|+|",      tatami },
+	{ "><>",      NULL }, 
+	{ "[]=",      tile },    /* first entry is default */
+	{ "[M]",      monocle },
 };
 
 /* key definitions */
@@ -74,7 +73,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *roficmd[] = { "/home/kerojam/.config/rofi/launchers/type-2/launcher.sh", NULL };
-static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-4/powermenu.sh", NULL };
+static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *browser2[] = { "librewolf", NULL };
@@ -93,8 +92,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_y,      spawn,          {.v = rofipmcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 		 	            XK_b,	   spawn,	       {.v = browser2 } },
-	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	       {.v = browser } },
+	{ MODKEY, 		 	            XK_b,	   spawn,	       {.v = browser } },
+	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	       {.v = browser2 } },
 	{ MODKEY,                       XK_s,	   spawn,	       {.v = browser3 } },
 	{ MODKEY,			            XK_e,	   spawn,    	   {.v = file_browser } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = weston } },
@@ -135,7 +134,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
-	{ MODKEY,                       XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_v,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
