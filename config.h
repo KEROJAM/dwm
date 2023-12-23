@@ -31,15 +31,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class          instance          title    tags mask     isfloating   monitor */
-	{ "Gimp",           NULL,           NULL,         0,            1,           -1 },
-	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,           -1 },
-	{ "Anki",           NULL,       "Statistics",     0,            1,           -1 },
-	{ "Anki",           NULL,        "Preview",       0,            1,           -1 },
-   	{ "Anki",           NULL,       "Edit Current",   0,            1,           -1 },
-	{ "weston-1", "Weston Compositor",  NULL,         4,            0,           -1 },
-	{ "discord",        NULL,           NULL,         2,            0,           -1 },
-	{ "Signal",         NULL,           NULL,         2,            0,           -1 },
+	/* class          instance          title    tags mask     isfloating  monitor */
+    { "Gimp",           NULL,           NULL,         0,            1,         -1 },
+	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
+	{ "Anki",           NULL,       "Statistics",     0,            1,         -1 },
+	{ "Anki",           NULL,        "Preview",       0,            1,         -1 },
+   	{ "Anki",           NULL,       "Edit Current",   0,            1,         -1 },
+	{ "weston-1", "Weston Compositor",  NULL,         4,            0,         -1 },
+	{ "VencordDesktop", "vencorddesktop",            NULL,          2,         -1 },
+	{ "Signal",         NULL,           NULL,         2,            0,         -1 },
 };
 
 /* layout(s) */
@@ -96,7 +96,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	       {.v = browser2 } },
 	{ MODKEY,                       XK_s,	   spawn,	       {.v = browser3 } },
 	{ MODKEY,			            XK_e,	   spawn,    	   {.v = file_browser } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = weston } },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = weston } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot} },
 	{ MODKEY,                       XK_a,      spawn,          {.v = anki} },
