@@ -79,8 +79,8 @@ static const char *browser[] = { "firefox", NULL };
 static const char *browser2[] = { "librewolf", NULL };
 static const char *browser3[] = { "brave", NULL };
 static const char *file_browser[] = { "nemo", NULL };
-static const char *anki_record[] = { "~/ames/ames.sh", "-r", NULL };
-static const char *anki_screen[] = { "~/ames/ames.sh", "-s", NULL };
+static const char *anki_record[] = { "/home/kerojam/ames/ames.sh", "-r", NULL };
+static const char *anki_screen[] = { "/home/kerojam/ames/ames.sh", "-s", NULL };
 static const char *anki[] = { "anki", NULL };
 static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
@@ -125,13 +125,13 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,   		        XK_l, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,	                    XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_y,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_p,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
 	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_v,      togglefloating, {0} },
