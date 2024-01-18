@@ -33,12 +33,12 @@ static const Rule rules[] = {
 	 */
 	/* class          instance          title    tags mask     isfloating  monitor */
     { "Gimp",           NULL,           NULL,         0,            1,         -1 },
-	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
+	{ "floorp",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
 	{ "Anki",           NULL,       "Statistics",     0,            1,         -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,         -1 },
    	{ "Anki",           NULL,       "Edit Current",   0,            1,         -1 },
 	{ "weston-1", "Weston Compositor",  NULL,         4,            0,         -1 },
-	{ "VencordDesktop", "vencorddesktop",            NULL,          2,         -1 },
+	{ "VencordDesktop", "vencorddesktop",  NULL,      2,            0,         -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,         -1 },
 };
 
@@ -75,12 +75,12 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[] = { "/home/kerojam/.config/rofi/launchers/type-2/launcher.sh", NULL };
 static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
-static const char *browser[] = { "firefox", NULL };
+static const char *browser[] = { "floorp", NULL };
 static const char *browser2[] = { "librewolf", NULL };
 static const char *browser3[] = { "brave", NULL };
 static const char *file_browser[] = { "nemo", NULL };
-static const char *anki_record[] = { "/home/kerojam/ames/ames.sh", "-r", NULL };
-static const char *anki_screen[] = { "/home/kerojam/ames/ames.sh", "-s", NULL };
+static const char *anki_record[] = { "/home/kerojam/.config/ames/ames.sh", "-r", NULL };
+static const char *anki_screen[] = { "/home/kerojam/.config/ames/ames.sh", "-s", NULL };
 static const char *anki[] = { "anki", NULL };
 static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
