@@ -10,6 +10,8 @@ static const unsigned int gappov    = 5;       /* vert outer gap between windows
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int vertpad            = 0;       /*vertical padding of bar*/
+static const int sidepad            = 0;       /*horizontal padding of bar*/
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -33,7 +35,7 @@ static const Rule rules[] = {
 	 */
 	/* class          instance          title    tags mask     isfloating  monitor */
     { "Gimp",           NULL,           NULL,         0,            1,         -1 },
-	{ "floorp",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
+	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
 	{ "Anki",           NULL,       "Statistics",     0,            1,         -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,         -1 },
    	{ "Anki",           NULL,       "Edit Current",   0,            1,         -1 },
@@ -75,9 +77,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[] = { "/home/kerojam/.config/rofi/launchers/type-2/launcher.sh", NULL };
 static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
-static const char *browser[] = { "floorp", NULL };
+static const char *browser[] = { "firefox", NULL };
 static const char *browser2[] = { "librewolf", NULL };
-static const char *browser3[] = { "brave", NULL };
+static const char *browser3[] = { "vivaldi", NULL };
 static const char *file_browser[] = { "nemo", NULL };
 static const char *anki_record[] = { "/home/kerojam/.config/ames/ames.sh", "-r", NULL };
 static const char *anki_screen[] = { "/home/kerojam/.config/ames/ames.sh", "-s", NULL };
@@ -85,27 +87,26 @@ static const char *anki[] = { "anki", NULL };
 static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
-#include "exitdwm.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_y,      spawn,          {.v = rofipmcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 		 	            XK_b,	   spawn,	       {.v = browser } },
-	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	       {.v = browser2 } },
-	{ MODKEY,                       XK_s,	   spawn,	       {.v = browser3 } },
-	{ MODKEY,			            XK_e,	   spawn,    	   {.v = file_browser } },
+	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY, 		 	XK_b,	   spawn,	   {.v = browser } },
+	{ MODKEY|ShiftMask,	        XK_b,	   spawn,	   {.v = browser2 } },
+	{ MODKEY,                       X_s,	   spawn,	   {.v = browser3 } },
+	{ MODKEY,			XK_e,	   spawn,    	   {.v = file_browser } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = weston } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot} },
 	{ MODKEY,                       XK_a,      spawn,          {.v = anki} },
-	{ ControlMask|ShiftMask,    	XK_F7,	   spawn,	       {.v = anki_record} },
-	{ ShiftMask,  		            XK_F7,	   spawn,	       {.v = anki_screen} },
-	{ MODKEY,                       XK_o,      togglebar,      {0} },
+	{ ControlMask|ShiftMask,    	XK_F7,	   spawn,	   {.v = anki_record} },
+	{ ShiftMask,  		        XK_F7,	   spawn,          {.v = anki_screen} },
+	{ MODKEY,                       XK_y,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_m,      focusstack,     {.i = -1 } },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_j,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_k,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = +0.05} },
@@ -119,17 +120,18 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_y,      incrihgaps,     {.i = +1 } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_o,      incrihgaps,     {.i = -1 } },
+    
 	{ MODKEY|ControlMask,           XK_y,      incrivgaps,     {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_o,      incrivgaps,     {.i = -1 } },
 	{ MODKEY|Mod1Mask,              XK_y,      incrohgaps,     {.i = +1 } },
 	{ MODKEY|Mod1Mask,              XK_o,      incrohgaps,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_y,      incrovgaps,     {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_o,      incrovgaps,     {.i = -1 } },
-	{ MODKEY,   		        XK_l, zoom,           {0} },
+	{ MODKEY,   		        XK_l,      zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,	                    XK_q,      killclient,     {0} },
+	{ MODKEY,	                XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask|ControlMask, XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_p,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
@@ -137,10 +139,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_v,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_i,      focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_o,      focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,      tagmon,         {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_o,      tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -150,8 +152,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_e,      exitdwm,        {0} },
-
 
 };
 
