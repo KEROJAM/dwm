@@ -12,7 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /*vertical padding of bar*/
 static const int sidepad            = 0;       /*horizontal padding of bar*/
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          = { "mononoki Nerd Font:size=12" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -23,10 +23,24 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeStatus] = { col_gray3, col_gray1, col_gray2 }, // Statusbar right
+	[SchemeTagsSel] = { col_gray3, col_cyan, col_cyan }, // TagBar left selected
+	[SchemeTagsNorm] = { col_gray3, col_gray1, col_gray2 }, // TagBar left unselected
+	[SchemeInfoSel] = { col_gray3, col_gray1, col_gray2 }, // infobar middle selected
+	[SchemeInfoNorm] = { col_gray3, col_gray1, col_gray2 }, // infobar middle unseleced
+};
+
+static const char *const autostart[] = {
+    "dwmblocks", NULL,
+    "fcitx5", NULL,
+    "sh", "-c", "syncthing -no-browser", "NULL",
+    "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BLIY/1178779.jpg", NULL,
+    /* "sh", "-c", "xrandr --output HDMI-0 --rotate -right -right-of HDMI-1 --pos 1080x1500", NULL,*/
+    NULL /*termintate*/
 };
 
 /* tagging */
-static const char *tags[] = { "一", "二", "三", "四","五", "六", "七", "八", "九" };
+static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -92,10 +106,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_y,      spawn,          {.v = rofipmcmd } },
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_r,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 		 	XK_b,	   spawn,	   {.v = browser } },
-	{ MODKEY|ShiftMask,	        XK_b,	   spawn,	   {.v = browser2 } },
-	{ MODKEY,                       X_s,	   spawn,	   {.v = browser3 } },
+	{ MODKEY,	                    XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY, 		 	            XK_b,	   spawn,	   {.v = browser } },
+	{ MODKEY|ShiftMask,	            XK_b,	   spawn,	   {.v = browser2 } },
+	{ MODKEY,                       XK_s,	   spawn,	   {.v = browser3 } },
 	{ MODKEY,			XK_e,	   spawn,    	   {.v = file_browser } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = weston } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
