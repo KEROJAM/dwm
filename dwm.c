@@ -298,12 +298,12 @@ static Window root, wmcheckwin;
 #include "config.h"
 
 struct Pertag {
-	unsigned int curtag, prevtag; /* current and previos tag */
+	unsigned int curtag, prevtag; /* current and previous tag */
 	int nmasters[LENGTH(tags) + 1]; /* number of windows in a master area */
 	float mfacts[LENGTH(tags) + 1]; /* mfacts per tag */
 	unsigned int sellts[LENGTH(tags) + 1]; /* selected layouts */
       	const Layout *ltidxs[LENGTH(tags) + 1][2]; /* matrix of tags and and layouts indexes */	
-	int showbars [LENGTH(tags) + 1]; /* dirplay bar for the current tag */
+	int showbars [LENGTH(tags) + 1]; /* display bar for the current tag */
 };
 /* compile-time check if all tags fit into an unsigned int bit array. */
 struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
