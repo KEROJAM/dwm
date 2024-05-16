@@ -739,9 +739,11 @@ createmon(void)
 	for (i = 0; i <= LENGTH(tags); i++){
 		m->pertag->nmasters[i] = m->nmaster;
 		m->pertag->mfacts[i] = m->mfact;
+		
 		m->pertag->ltidxs[i][0] = m->lt[0];
 		m->pertag->ltidxs[i][1] = m->lt[1];
 		m->pertag->sellts[i] = m->sellt;
+		
 		m->pertag->showbars[i] = m->showbar;
 	}
 
