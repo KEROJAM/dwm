@@ -1,10 +1,10 @@
 # DWM
 
-Idk just screwing around with dwm
+This is My dwm setup that I really like
 
 ## Dependencies 
 
-x11, Xinerama, xcb, freetype, notofont-cjk
+x11, Xinerama, xcb, freetype, notofont-cjk, mononoki Nerd Font
 
 ## Make dwm
 
@@ -12,23 +12,25 @@ x11, Xinerama, xcb, freetype, notofont-cjk
 
 ### Patches
 
-All of the patches that I applied are in the patch folder but here are the names of them 
+Here are some of the patches that I added  
 
 - actualfullscreen
 - vanitygaps
 - hide vacant tags
 - attachbelow
 - autostart
+- coolautostart
 - pertag
 - tatami layout
+- color bar
+- bar padding
 
 ## Things I also recomend to install
 
-- [Dmenu](https://tools.suckless.org/dmenu/)
-- [slstatus](https://github.com/KEROJAM/slstatus)
+- [DWMBlocks](https://github.com/KEROJAM/dwmblocks)
 
 ## Keybind
 
-Since I use colemakdh I have keybinds for that *mostly* so I recomend you to costumize them to your liking
+Since I use colemakdh I have keybinds for that *mostly* so I recommend you to customize them to your liking
 
 :)
