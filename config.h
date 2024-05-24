@@ -33,7 +33,7 @@ static const char *colors[][3]      = {
 static const char *const autostart[] = {
     "dwmblocks", NULL,
     "fcitx5", NULL,
-    "sh", "-c", "syncthing -no-browser", "NULL",
+    "sh", "-c", "syncthing -no-browser", NULL,
     "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BLIY/1178779.jpg", NULL,
     /* "sh", "-c", "xrandr --output HDMI-0 --rotate -right -right-of HDMI-1 --pos 1080x1500", NULL,*/
     NULL /*termintate*/
