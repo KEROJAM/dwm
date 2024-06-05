@@ -21,7 +21,6 @@ Here are some of the patches that I added
 - autostart
 - coolautostart
 - pertag
-- tatami layout
 - color bar
 - bar padding
 
