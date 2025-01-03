@@ -39,9 +39,9 @@ static const char *const autostart[] = {
     "redshift", NULL,
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
     "sh", "-c", "syncthing -no-browser", NULL,
-    "sh", "-c", "xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97", NULL,
-/* "sh", "-c", "xrandr --output HDMI-0 --rotate left --left-of HDMI-1 --pos 1080x1500", NULL,*/
-    "sh", "-c", "feh --bg-fill ~/Pictures/Wallpapers/anime/BLIY/1178779.jpg", NULL,
+/*    "sh", "-c", "xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97", NULL,
+ "sh", "-c", "xrandr --output HDMI-0 --rotate left --left-of HDMI-1 --pos 1080x1500", NULL,*/
+    "sh", "-c", "feh --bg-fill ~/Pictures/wallpapers/anime/BLIY/YuuChoco.png", NULL,
     NULL /*termintate*/
 };
 
@@ -122,10 +122,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask|Mod1Mask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/normal/GKe-Pc3aoAAt-A1.jpg")},
 	{ MODKEY|ControlMask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BlueArchive/wallhaven-rdv5q7.jpg")},
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot } },
-	{ 0,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 2000+")},
-	{ ShiftMask,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 68571")},
+	{ 0,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 10+")},
+	{ ShiftMask,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 400")},
 	{ ShiftMask,			XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 12000")},
-	{ 0,			XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 2000-")},
+	{ 0,			XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 10-")},
 	{ 0,			XF86XK_AudioLowerVolume,	spawn, SHCMD ("amixer sset Master 5%- unmute")},
 	{ 0,			XF86XK_AudioMute,		spawn, SHCMD ("amixer sset Master $(amixer get Master | grep -q '\\[on\\]' && echo 'mute' || echo 'unmute')")},
 	{ 0,			XF86XK_AudioRaiseVolume,	spawn, SHCMD ("amixer sset Master 5%+ unmute")},
