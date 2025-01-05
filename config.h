@@ -41,7 +41,7 @@ static const char *const autostart[] = {
     "sh", "-c", "syncthing -no-browser", NULL,
 /*    "sh", "-c", "xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97", NULL,
  "sh", "-c", "xrandr --output HDMI-0 --rotate left --left-of HDMI-1 --pos 1080x1500", NULL,*/
-    "sh", "-c", "feh --bg-fill ~/Pictures/wallpapers/anime/BLIY/YuuChoco.png", NULL,
+    "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BLIY/YuuChoco.png", NULL,
     NULL /*termintate*/
 };
 
@@ -96,7 +96,7 @@ static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/
 static const char *termcmd[] = { "alacritty", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *browser2[] = { "librewolf", NULL };
-static const char *browser3[] = { "google-chrome-stable", NULL };
+static const char *browser3[] = { "chromium", NULL };
 static const char *file_browser[] = { "nemo", NULL };
 static const char *anki_record[] = { "/home/kerojam/.config/ames/ames.sh", "-r", NULL };
 static const char *anki_screen[] = { "/home/kerojam/.config/ames/ames.sh", "-s", NULL };
