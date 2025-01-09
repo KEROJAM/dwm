@@ -94,6 +94,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
+static const char *termfile[] = { "kitty", "yazi", NULL };
 static const char *browser[] = { "firefox", NULL };
 static const char *browser2[] = { "librewolf", NULL };
 static const char *browser3[] = { "chromium", NULL };
@@ -101,7 +102,6 @@ static const char *file_browser[] = { "nemo", NULL };
 static const char *anki_record[] = { "/home/kerojam/.config/ames/ames.sh", "-r", NULL };
 static const char *anki_screen[] = { "/home/kerojam/.config/ames/ames.sh", "-s", NULL };
 static const char *anki[] = { "anki", NULL };
-static const char *weston[] = { "weston", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
 static const Key keys[] = {
@@ -115,12 +115,12 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,	        XK_b,	   spawn,	   {.v = browser2 } },
 	{ MODKEY,                       XK_s,	   spawn,	   {.v = browser3 } },
 	{ MODKEY,		        XK_e,	   spawn,    	   {.v = file_browser } },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = weston } },
+	{ MODKEY,             XK_w,      spawn,          {.v = termfile } },
 	{ MODKEY,                       XK_u,      spawn,          {.v = emacs } },
-	{ MODKEY|ShiftMask,		XK_e,	   spawn, SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BLIY/1265356.jpg")},
-	{ MODKEY|ShiftMask|ControlMask,		XK_e,	   spawn, SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BLIY/1178779.jpg")},
-	{ MODKEY|ShiftMask|Mod1Mask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/normal/GKe-Pc3aoAAt-A1.jpg")},
-	{ MODKEY|ControlMask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/Wallpapers/anime/BlueArchive/wallhaven-rdv5q7.jpg")},
+	{ MODKEY|ShiftMask,		XK_e,	   spawn, SHCMD("feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BLIY/1265356.jpg")},
+	{ MODKEY|ShiftMask|ControlMask,		XK_e,	   spawn, SHCMD("feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BLIY/1178779.jpg")},
+	{ MODKEY|ShiftMask|Mod1Mask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/normal/GKe-Pc3aoAAt-A1.jpg")},
+	{ MODKEY|ControlMask,		XK_e,	   spawn,	SHCMD("feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BlueArchive/wallhaven-rdv5q7.jpg")},
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot } },
 	{ 0,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 10+")},
 	{ ShiftMask,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 400")},
