@@ -39,7 +39,6 @@ static const char *const autostart[] = {
     "redshift", NULL,
     "flameshot", NULL,
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
-    "sh", "-c", "syncthing -no-browser", NULL,
 /*    "sh", "-c", "xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97", NULL,
  "sh", "-c", "xrandr --output HDMI-0 --rotate left --left-of HDMI-1 --pos 1080x1500", NULL,*/
     "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BLIY/1178779.jpg", NULL,
