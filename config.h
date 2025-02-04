@@ -14,7 +14,7 @@ static const int vertpad            = 0;       /*vertical padding of bar*/
 static const int sidepad            = 0;       /*horizontal padding of bar*/
 static const char *fonts[]          = { "mononoki Nerd Font:size=12" };
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#ECDBD6";
+static const char col_gray1[]       = "#fdf5ed";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#000000";
 static const char col_gray4[]       = "#000000";
