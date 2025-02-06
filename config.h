@@ -58,10 +58,10 @@ static const Rule rules[] = {
 	{ "Anki",           NULL,       "Statistics",     0,            1,         -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,         -1 },
    	{ "Anki",           NULL,       "Edit Current",   0,            1,         -1 },
-	{ "weston-1", "Weston Compositor",  NULL,         3,            0,         -1 },
-	{ "vesktop", 	"vesktop",	        NULL,         2,            0,         -1 },
+	{ "vesktop", 	 "vesktop",	    NULL,         2,            0,         -1 },
+	{ "Chromium",	 "chromium",	    NULL,	  3,		0,	   -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,         -1 },
-	{ "resolve",    "resolve",          NULL,         5,            0,         -1 },
+	{ "resolve",     "resolve",         NULL,         5,            0,         -1 },
 };
 
 /* layout(s) */
