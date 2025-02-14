@@ -62,7 +62,7 @@ static const Rule rules[] = {
 	{ "Chromium-browser","chromium-browser",  NULL,	  4,		0,	   -1 },
 	{ "Signal",         NULL,           NULL,         2,            0,         -1 },
 	{ "resolve",     "resolve",         NULL,         5,            0,         -1 },
-	{ "jetbrains-idea-ce", "jetbrains-idea-ce", NULL, 6,		0,	   -1 },
+	{ "jetbrains-idea-ce", "jetbrains-idea-ce", NULL, 5,		0,	   -1 },
 };
 
 /* layout(s) */
