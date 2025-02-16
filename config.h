@@ -41,7 +41,7 @@ static const char *const autostart[] = {
     "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1", NULL,
 /*    "sh", "-c", "xrandr --output HDMI-0 --mode 1920x1080 --rate 74.97", NULL,
  "sh", "-c", "xrandr --output HDMI-0 --rotate left --left-of HDMI-1 --pos 1080x1500", NULL,*/
-    "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/wallpapers/anime/BLIY/1178779.jpg", NULL,
+    "sh", "-c", "feh --bg-fill /home/kerojam/Pictures/wallpapers/normal/2025-02-15_01.44.43.png", NULL,
     NULL /*termintate*/
 };
 
