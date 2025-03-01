@@ -54,7 +54,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class          instance          title    tags mask     isfloating  monitor */
-	{ "firefox",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
+	{ "floorp",     "Toolkit", "Picture-in-Picture", 0,            1,         -1 },
 	{ "Anki",           NULL,       "Statistics",     0,            1,         -1 },
 	{ "Anki",           NULL,        "Preview",       0,            1,         -1 },
    	{ "Anki",           NULL,       "Edit Current",   0,            1,         -1 },
@@ -95,7 +95,7 @@ static const char *roficmd[] = { "rofi", "-show", "drun", NULL };
 static const char *rofipmcmd[] = { "/home/kerojam/.config/rofi/powermenu/type-2/powermenu.sh", NULL };
 static const char *termcmd[] = { "kitty", NULL };
 static const char *termfile[] = { "kitty", "yazi", NULL };
-static const char *browser[] = { "firefox", NULL };
+static const char *browser[] = { "floorp", NULL };
 static const char *browser2[] = { "librewolf", NULL };
 static const char *browser3[] = { "chromium", NULL };
 static const char *file_browser[] = { "nemo", NULL };
