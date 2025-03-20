@@ -10,8 +10,8 @@ static const unsigned int gappov    = 2;       /* vert outer gap between windows
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 0;       /*vertical padding of bar*/
-static const int sidepad            = 0;       /*horizontal padding of bar*/
+static const int vertpad            = 2;       /*vertical padding of bar*/
+static const int sidepad            = 2;       /*horizontal padding of bar*/
 static const char *fonts[]          = { "Mononoki nerd font:size=12" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#fdf5ed";
@@ -126,7 +126,8 @@ static const Key keys[] = {
 	{ 0,                            XK_F7,     spawn,          {.v = flameshot } },
 	{ 0,				XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 10+")},
 	{ ShiftMask,			XF86XK_MonBrightnessUp,		spawn, SHCMD ("brightnessctl s 400")},
-	{ ShiftMask,			XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 12000")},
+	{ ShiftMask,			XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 10")},
+	{ ShiftMask|ControlMask,	XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 0")},
 	{ 0,				XF86XK_MonBrightnessDown,	spawn, SHCMD ("brightnessctl s 10-")},
 	{ 0,				XF86XK_AudioLowerVolume,	spawn, SHCMD ("amixer sset Master 5%- unmute")},
 	{ 0,				XF86XK_AudioMute,		spawn, SHCMD ("amixer sset Master $(amixer get Master | grep -q '\\[on\\]' && echo 'mute' || echo 'unmute')")},
