@@ -106,6 +106,7 @@ static const char *anki[] = { "anki", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
 static const char *vesktop[] = {"vesktop", NULL };
+static const char *lockscreen[] = { "betterlockscreen", "-l", NULL };
 static const Key keys[] = {
     /* modifier                     key        function        argument */
 	
@@ -136,6 +137,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_a,      spawn,          {.v = anki } },
 	{ ControlMask|ShiftMask,    	XK_F7,	   spawn,	   {.v = anki_record } },
 	{ ShiftMask,  		        XK_F7,	   spawn,          {.v = anki_screen } },
+	{ MODKEY,			XK_p,	   spawn,	   { .v = lockscreen }},
 	{ MODKEY,                       XK_y,      togglebar,      {0} },
 	{ MODKEY,                       XK_n,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_m,      focusstack,     {.i = -1 } },
