@@ -35,6 +35,7 @@ static const char *const autostart[] = {
     "dunst", NULL,
     "fcitx5", NULL,
     "udiskie", NULL,
+    "pkill", "picom", NULL,
     "picom", NULL,
     "redshift", NULL,
     "flameshot", NULL,
