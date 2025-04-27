@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 };
 
 static const char *const autostart[] = {
-    "dwmblocks", NULL,
+    "slstatus", NULL,
     "dunst", NULL,
     "fcitx5", NULL,
     "udiskie", NULL,
