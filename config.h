@@ -110,7 +110,6 @@ static const char *anki_screen[] = { "/home/kerojam/.config/ames/ames.sh", "-s",
 static const char *anki[] = { "anki", NULL };
 static const char *emacs[] = { "emacs", NULL };
 static const char *flameshot[] = { "flameshot", "gui", NULL };
-static const char *vesktop[] = {"vesktop", NULL };
 static const char *lockscreen[] = { "betterlockscreen", "-l", NULL };
 static const Key keys[] = {
     /* modifier                     key        function        argument */
